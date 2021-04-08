@@ -1,0 +1,74 @@
+{%extends 'base.html' %} {% block title%}
+<title>Dashboard</title>
+{% endblock %} {% block dash_active%} class="active" {% endblock %} {% block
+content %}
+<div class="row">
+  {% block page_heading %}
+  <h2>Word Index</h2>
+  {% endblock %}
+  <div class="col-md-2 sidenav">
+    <a
+      {%
+      block
+      index_active
+      %}{%
+      endblock
+      %}
+      class="side-active"
+      href="{{url_for('dashboard')}}"
+      >All Words</a
+    >
+    <a {% block create_active %}{% endblock %} href="{{url_for('word_create')}}"
+      >Add New</a
+    >
+    <a {% block image_active %}{% endblock %} href="{{url_for('add_image')}}"
+      >Add Image</a
+    >
+  </div>
+  <div class="col-md-10 main">
+    {% block main %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th>SN</th>
+          <th>Word</th>
+          <th>Meaning</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for word in words %}
+        <tr>
+          <!-- jinja template has variables on eo fhtem is loop.index adding () wirll start numbering from 0 -->
+          <td>{{ loop.index}}</td>
+          <td>{{word['word']}}</td>
+          <td>{{word['meaning']}}</td>
+          <td>
+            <a
+              href="{{ url_for('word_details', id=word['id']) }}"
+              class="btn btn-md btn-primary btn-block"
+              >Edit</a
+            >
+          </td>
+          <form
+            action="{{ url_for('word_delete', id=word['id']) }}"
+            method="post"
+          >
+            <td>
+              <button class="btn btn-md btn-danger btn-block">X</button>
+            </td>
+          </form>
+        </tr>
+        {% else %}
+        <!-- else block to handle empty dictionary -->
+        <tr>
+          <td colspan="3">
+            The dictionary has no word at the moment, please try again later.
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    {% endblock %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,48 @@
+{%extends 'base.html' %} {% block title%}
+<title>Home</title>
+{% endblock %} {% block home_active %} class="active" {% endblock %} {% block
+content %}
+<div class="row">
+  <div class="col-md-6">
+    <h1>The Dictionary App</h1>
+    <div class="row">
+      <div class="col-sm-6">
+        <form action="#" method="POST">
+          <div class="form-group">
+            <label for="word">Word:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="word"
+              id="word"
+              placeholder="Type in the word here: "
+              required
+            />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-lg">
+            Submit
+          </button>
+        </form>
+      </div>
+      <div class="col-sm-6">
+        <form action="">
+          <div class="form-group">
+            <label for="word">Meaning: </label>
+            <textarea
+              id="word"
+              class="form-control"
+              placeholder="The meaning of the word shows here:"
+              disabled
+            >
+{{ user_response }}</textarea
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <img src="{{url_for('static', filename='images/search2.png')}}" alt="" />
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,137 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 45px; /* Margin bottom by footer height */
+}
+
+nav.navbar {
+  background-color: #34325e;
+}
+a.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+#logo {
+  height: 100%;
+}
+
+/* Homepage */
+.container-fluid > .row {
+  padding: 60px 50px 0 50px;
+}
+img {
+  width: 100%;
+  height: 400px;
+  margin-left: auto;
+  margin-bottom: 50px;
+}
+
+h1 {
+  margin-top: 45px;
+  margin-bottom: 20px;
+  font-size: 50px;
+  font-family: Georgia, serif;
+  font-weight: bold;
+}
+
+h1 ~ .row {
+  padding-top: 5px;
+  background-color: #d2e2f0;
+}
+
+label {
+  font-family: serif;
+  font-size: 20px;
+}
+
+h1,
+label {
+  color: #34325e;
+}
+
+input[type="text"],
+textarea.form-control {
+  font-size: 18px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+textarea.form-control {
+  resize: none;
+  height: 200px;
+  background-color: #ffede5;
+}
+
+/* Dashboard */
+
+.row > h2 {
+  margin-top: -50px;
+  margin-left: 275px;
+  color: #34325e;
+  font-family: Georgia,  serif;
+  font-weight: bold;
+}
+
+.sidenav {
+  height: 100%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-right: solid black 5px;
+  overflow-x: hidden;
+}
+
+.sidenav > a {
+  padding: 6px 8px 6px 8px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.side-active {
+  text-shadow: 1px 1px gray;
+}
+
+.main {
+  overflow-y: scroll;
+  height: 70vh;
+  padding-left: 60px;
+}
+
+/* edit page */
+
+.main form {
+  width: 80%;
+  margin-right: 20%;
+  margin-top: 15px;
+}
+
+.main label {
+  text-align: left !important;
+}
+
+.main textarea {
+  width: 100%;
+}
+
+.footer {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 45px; /* Set the fixed height of the footer here */
+  background-color: #343252;
+  color: #9d9d9d;
+}
+.footer p {
+  margin-top: 15px;
+}
+
+footer.footer,
+nav.navbar {
+  font-family: monospace;
+}
